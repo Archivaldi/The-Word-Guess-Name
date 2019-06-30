@@ -54,6 +54,8 @@
 
     var points = 0; //wins
 
+    var guess = 12;
+
     var play = true; // start game
 
         var varIndex = Math.floor(Math.random() * options.length); //random word
@@ -79,15 +81,13 @@ if (guessWord == "violin") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
                     } 
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "cello") {
+} else if (guessWord == "cello") {
     var violinLets = ["c", "e","l", "o"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -103,15 +103,13 @@ else if (guessWord == "cello") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    } 
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }  
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "alto") {
+} else if (guessWord == "alto") {
     var violinLets = ["a", "l", "o", "t"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -127,15 +125,13 @@ else if (guessWord == "alto") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    } 
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }  
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "trumpet") {
+} else if (guessWord == "trumpet") {
     var violinLets = ["t", "r", "u", "m", "p", "e"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -157,15 +153,13 @@ else if (guessWord == "trumpet") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
                     }  
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "guitar") {
+} else if (guessWord == "guitar") {
     var violinLets = ["g", "u", "i", "t", "a", "r"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -187,15 +181,13 @@ else if (guessWord == "guitar") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
                     }  
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "piano") {
+} else if (guessWord == "piano") {
     var violinLets = ["p", "i", "a", "n", "0"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -214,15 +206,13 @@ else if (guessWord == "piano") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    }  
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }   
         }
                     document.onkeyup = keyPressed;
                 
-}
-
-else if (guessWord == "saxophone") {
+} else if (guessWord == "saxophone") {
     var violinLets = ["s", "a", "x", "o", "p", "h", "n", "e"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -250,14 +240,13 @@ else if (guessWord == "saxophone") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                      } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    }  
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }   
         }
                     document.onkeyup = keyPressed;
                 
-}
-else (guessWord == "clarinet"); {
+} else if (guessWord == "clarinet"); {
     var violinLets = ["c", "l", "a", "r", "i", "n", "e", "t"]
         function keyPressed() {
                     if (event.key == guessWord[guessWord.length - 1]) {
@@ -285,13 +274,13 @@ else (guessWord == "clarinet"); {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    } 
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }  
         }
                     document.onkeyup = keyPressed;
                 
-}
+} 
 
 if (guessWord == "flute") {
     var violinLets = ["f", "l", "u", "t", "e"]
@@ -312,9 +301,9 @@ if (guessWord == "flute") {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else {
-                        points = points - 1;
-                        document.querySelector(".wins").innerText = points;
-                    }  
+                        guess = guess - 1;
+                        document.querySelector(".guess").innerText = guess;
+                    }   
         }
                     document.onkeyup = keyPressed;
                 
