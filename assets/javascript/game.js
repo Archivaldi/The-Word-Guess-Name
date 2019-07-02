@@ -3,23 +3,25 @@
      var options = ["violin"]//, "cello", "alto", "trumpet", "guitar", "piano", "saxophone", "clarinet", "flute"];
 
     var points = 0; //wins
-
     var guess = 12;
+    var word = document.getElementById("word");
 
-    var play = true; // start game
-
-        var varIndex = Math.floor(Math.random() * options.length); //random word
-        var guessWord = options[varIndex]; //Computer's random chosen word from "options" array
+        var varIndex = Math.floor(Math.random() * options.length);         //random word
+        var guessWord = options[varIndex];                                 //Computer's random chosen word from "options" array
         console.log(guessWord);
 
-    if (guessWord == "violin") {                                        //if word "violin" is chousen
 
-    var word = document.getElementById("word");
-    word.textContent = "_ _ _ _ _ _";                                   //take the lenght of word for a start
+    if (guessWord === "violin") {                                        //if word "violin" is chousen
+        
+    word.innerText = "_ _ _ _ _ _"                                     //take the lenght of word for a start
+    // QUESTION 1. I can't change character by character 
+
     var par = document.getElementById("par");
-    var violinLets = ["v", "i", "o", "l", "n"]                          //take letters like options for computer
-        function keyPressed() {                                         //function for game with word "violin"
-                    if (event.key == guessWord[guessWord.length - 1]) {
+
+        // QUESTION 3. function keyPressed doesn't work outside of loop
+
+    function keyPressed() {                                         //function for game with word "violin"
+                      if (event.key == guessWord[guessWord.length - 1]) {
                         points = points + 1;
                         document.querySelector(".wins").innerText = points;
                     } else if  (event.key == guessWord[guessWord.length - 2]) {
@@ -38,8 +40,15 @@
                         guess = guess - 1;
                         document.querySelector(".guess").innerText = guess;
                         par.innerText = par.textContent + (event.key);
+                                if (guess === 0) {
+                                    document.querySelector(".guess").innerText = "You Lose!";
+                                    // QUESTION 2. if i type "alert" or "confirm", it works BEFORE "You Lose"
+                                } 
                     }
         }
+        // QUESTION 4. How to stop work this loop after loosing? I put break, but it doesn't work.
+        // QUESTION 5. I should change "Wins" when whole word is typed, not every letter
+        
                     document.onkeyup = keyPressed;
     }
 
