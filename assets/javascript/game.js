@@ -19,30 +19,39 @@ if (guessWord === "violin") {                                        //if word "
     word.textContent = wordToDisplay.join(" ");                      //then we take our split word back to the whole word
 
     var par = document.getElementById("par");                        //var for Letters Already Guessed paragraph
-
+    document.onkeypress = keyPressed;
 
     function keyPressed() {                                          //function for game 
+
         console.log(wordToGuess)
-        if (event.key == "i") {
+        if (word.textContent.includes(event.key)){                   //put restrictions for doubled correct letters
+            word.textContent = word.textContent;
+            console.log("you typed this letter");
+        } else if (event.key == "i") {                               // word "violin" has two "i", so, we want to chahge both
             wordToDisplay[1] = event.key;
             wordToDisplay[4] = event.key;
             word.textContent = wordToDisplay.join(" ");
-        } else if (par.textContent.includes(event.key)) { 
+        } else if (par.textContent.includes(event.key)) {            //put restrictions for doubled incorrect letters 
             par.textContent = par.textContent;
-            console.log(event.key)
-        } else if (!(wordToGuess.includes(event.key))) {
+            console.log("guessed letter")
+        } else if (!(wordToGuess.includes(event.key))) {             //if you tiped incorrect letter, points goes down
+
+            if (guess == 1) {                                        //if guess == 0; then refresh the page
+                alert("you lose!");
+                document.location.reload();
+            }
             guess = guess - 1;
             document.querySelector(".guess").innerText = guess;
             par.innerText = par.textContent + (event.key) + ", ";
-            console.log(event.key);
+            console.log("-1 point");
         } else {
             wordToDisplay[wordToGuess.indexOf(event.key)] = event.key;
             word.textContent = wordToDisplay.join(" ");
             console.log(event.key);
         }
-    }
-    document.onkeypress = keyPressed;
 
+    }
+}
 
 
 
@@ -84,7 +93,6 @@ if (guessWord === "violin") {                                        //if word "
     // QUESTION 5. I should change "Wins" when whole word is typed, not every letter
 
     // document.onkeyup = keyPressed;
-}
 
 // } else if (guessWord == "cello") {
 //     var violinLets = ["c", "e","l", "o"]
