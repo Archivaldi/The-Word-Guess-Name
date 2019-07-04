@@ -1,8 +1,18 @@
-var options = ["violin", "cello", "viola", "trumpet", "guitar", "piano", "saxophone", "clarinet", "flute"];
+var options = ["violin", "cello", "viola", "trumpet", "guitar"]//, "piano", "saxophone", "clarinet", "flute"];
 var guess = 12;
 var points = 0; //wins
 var word = document.getElementById("word");
 var par = document.getElementById("par");                          //var for Letters Already Guessed paragraph
+
+//audio Files
+var audioViolin =  new Audio('assets/audio/violin.mp3'); 
+var audioCello =  new Audio('assets/audio/cello.mp3'); 
+var audioTrumpet =  new Audio('assets/audio/Trumpet.mp3'); 
+var audioCello =  new Audio('assets/audio/viola.mp3');
+var audioGuitar =  new Audio('assets/audio/guitar.mp3'); 
+var audioViola =  new Audio('assets/audio/viola.mp3'); 
+ 
+
 
 
 function takeWord() {
@@ -14,8 +24,7 @@ function takeWord() {
     var guess = 12;
     document.querySelector(".guess").innerText = guess;
 
-    if (guessWord === "violin") {   
-        var audioWin = new Audio('assets/audio/violin.mp3');                                   //if word "violin" is chousen
+    if (guessWord === "violin") {                                      //if word "violin" is chousen
 
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
@@ -31,7 +40,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioWin.play();
+                audioTrumpet.pause();
+                audioViola.pause();
+                audioGuitar.pause();
+                audioCello.pause();
+                audioViolin.play();
             }
         }
 
@@ -73,8 +86,6 @@ function takeWord() {
         }
     } else if (guessWord === "cello") {
 
-        var audioWin = new Audio('assets/audio/cello.mp3');
-
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -89,7 +100,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioWin.play();
+                audioTrumpet.pause();
+                audioViola.pause();
+                audioGuitar.pause();
+                audioViolin.pause();
+                audioCello.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -131,7 +146,6 @@ function takeWord() {
 
 
     } else if (guessWord === "viola") {
-        var audioWin = new Audio('assets/audio/viola.mp3');
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -146,7 +160,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioWin.play();
+                audioTrumpet.pause();
+                audioGuitar.pause();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -182,7 +200,6 @@ function takeWord() {
         }
 
     } else if (guessWord === "trumpet") {
-        var audioWin = new Audio('assets/audio/trumpet.mp3');
 
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
@@ -198,7 +215,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioWin.play();
+                audioGuitar.pause();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -239,6 +260,7 @@ function takeWord() {
         }
 
     } else if (guessWord === "guitar") {
+        var audioWin = new Audio('assets/audio/violin.mp3');
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -253,6 +275,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.pause();
+                audioGuitar.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
