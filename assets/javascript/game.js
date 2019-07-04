@@ -250,7 +250,50 @@ function takeWord() {
                 } 
             }
             
-         }
+         } else if (guessWord === "piano") {
+            var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
+                                                                            // change every character, bua we can change every separate string 
+            document.onkeypress = keyPressed;
+
+            var wordToDisplay = Array(guessWord.length).fill("_");           //in start of game we want't to display guessWord like "_ _ _ _ _ _"
+
+            word.textContent = wordToDisplay.join(" ");
+
+            function win() {                                                 //function for winning
+                if (word.textContent == "p i a n o") {
+                            console.log("you win!");
+                            points = points + 1;
+                            document.querySelector(".wins").innerText = points;
+                            takeWord();
+                        } 
+                    }
+            
+
+
+            function keyPressed() {                                          //function for game 
+
+                console.log(wordToGuess)
+                if (word.textContent.includes(event.key)){                   //put restrictions for doubled correct letters
+                    word.textContent = word.textContent;
+                    console.log("you typed this letter");
+                } else if (par.textContent.includes(event.key)) {            //put restrictions for doubled incorrect letters 
+                    par.textContent = par.textContent;
+                    console.log("guessed letter")
+                } else if (!(wordToGuess.includes(event.key))) {             //if you tiped incorrect letter, points goes down
+                    guess = guess - 1;
+                    document.querySelector(".guess").innerText = guess;
+                    par.innerText = par.textContent + (event.key) + ", ";
+                    console.log("-1 point");
+                    lose();
+                }  else { 
+                    wordToDisplay[wordToGuess.indexOf(event.key)] = event.key;
+                    word.textContent = wordToDisplay.join(" ");
+                    console.log(event.key);
+                    win();
+                } 
+            }
+            
+         } 
 
 
 }
