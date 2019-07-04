@@ -5,17 +5,42 @@ var word = document.getElementById("word");
 var par = document.getElementById("par");                          //var for Letters Already Guessed paragraph
 
 //audio Files
-var audioViolin =  new Audio('assets/audio/violin.mp3'); 
-var audioCello =  new Audio('assets/audio/cello.mp3'); 
-var audioTrumpet =  new Audio('assets/audio/Trumpet.mp3'); 
-var audioGuitar =  new Audio('assets/audio/guitar.mp3'); 
-var audioViola =  new Audio('assets/audio/viola.mp3'); 
-var audioPiano =  new Audio('assets/audio/piano.mp3'); 
-var audioSax =  new Audio('assets/audio/saxophone.mp3'); 
-var audioClarinet =  new Audio('assets/audio/clarinet.mp3'); 
-var audioFlute =  new Audio('assets/audio/flute.mp3'); 
-var audioLose =  new Audio('assets/audio/lose.mp3'); 
- 
+var audioViolin = new Audio('assets/audio/violin.mp3');
+var audioCello = new Audio('assets/audio/cello.mp3');
+var audioTrumpet = new Audio('assets/audio/Trumpet.mp3');
+var audioGuitar = new Audio('assets/audio/guitar.mp3');
+var audioViola = new Audio('assets/audio/viola.mp3');
+var audioPiano = new Audio('assets/audio/piano.mp3');
+var audioSax = new Audio('assets/audio/saxophone.mp3');
+var audioClarinet = new Audio('assets/audio/clarinet.mp3');
+var audioFlute = new Audio('assets/audio/flute.mp3');
+var audioLose = new Audio('assets/audio/lose.mp3');
+
+function removeImgFromShow() {
+                document.getElementById("start").classList.remove("show");
+                document.getElementById("cello").classList.remove("show");
+                document.getElementById("viola").classList.remove("show");
+                document.getElementById("clarinet").classList.remove("show");
+                document.getElementById("flute").classList.remove("show");
+                document.getElementById("guitar").classList.remove("show");
+                document.getElementById("saxophone").classList.remove("show");
+                document.getElementById("trumpet").classList.remove("show");
+                document.getElementById("piano").classList.remove("show");
+                document.getElementById("violin").classList.remove("show");
+}
+
+function stopAudio() {
+    audioTrumpet.pause();
+                audioSax.pause();
+                audioViola.pause();
+                audioGuitar.pause();
+                audioCello.pause();
+                audioPiano.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
+                audioViolin.pause();
+}
+
 
 
 
@@ -44,15 +69,14 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioTrumpet.pause();
-                audioSax.pause();
-                audioViola.pause();
-                audioGuitar.pause();
-                audioCello.pause();
-                audioPiano.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+
+                //stop other audios and run that we need
+                stopAudio();
                 audioViolin.play();
+
+                //hide all images and show that we need
+                removeImgFromShow();
+                document.getElementById("violin").classList.add("show");
             }
         }
 
@@ -60,7 +84,7 @@ function takeWord() {
             if (guess == 0) {
                 alert("You lose!");
                 document.location.reload();
-                
+
             }
         }
 
@@ -109,15 +133,12 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioTrumpet.pause();
-                audioSax.pause();
-                audioViola.pause();
-                audioGuitar.pause();
-                audioViolin.pause();
-                audioPiano.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioCello.play();
+
+                //hide all images and show that we need
+                removeImgFromShow();
+                document.getElementById("cello").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -174,15 +195,12 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioTrumpet.pause();
-                audioGuitar.pause();
-                audioViolin.pause();
-                audioCello.pause();
-                audioPiano.pause();
-                audioSax.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioViola.play();
+
+                //hide all images and show that we need
+                removeImgFromShow();
+                document.getElementById("viola").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -234,15 +252,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioGuitar.pause();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioPiano.pause();
-                audioSax.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioTrumpet.play();
+
+                removeImgFromShow();
+                document.getElementById("trumpet").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -298,15 +312,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioTrumpet.pause();
-                audioPiano.pause();
-                audioSax.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioGuitar.play();
+
+                removeImgFromShow();
+                document.getElementById("guitar").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -357,15 +367,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioTrumpet.pause();
-                audioGuitar.pause();
-                audioSax.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioPiano.play();
+
+                removeImgFromShow();
+                document.getElementById("piano").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -416,15 +422,12 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioTrumpet.pause();
-                audioGuitar.pause();
-                audioPiano.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioSax.play();
+
+
+                removeImgFromShow();
+                document.getElementById("saxophone").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -480,15 +483,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioTrumpet.pause();
-                audioGuitar.pause();
-                audioPiano.pause();
-                audioSax.pause();
-                audioFlute.pause();
+                stopAudio();
                 audioClarinet.play();
+
+                removeImgFromShow();
+                document.getElementById("clarinet").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -539,15 +538,11 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
-                audioViolin.pause();
-                audioCello.pause();
-                audioViola.pause();
-                audioTrumpet.pause();
-                audioGuitar.pause();
-                audioPiano.pause();
-                audioSax.pause();
-                audioClarinet.pause();
+                stopAudio();
                 audioFlute.play();
+
+                removeImgFromShow();
+                document.getElementById("flute").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page

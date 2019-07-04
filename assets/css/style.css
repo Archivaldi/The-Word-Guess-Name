@@ -1,0 +1,14 @@
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+.col-lg-6{
+    border: 3px grey dashed;
+}
+body {
+    background-color: yellow;
+}
