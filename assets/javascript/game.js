@@ -7,7 +7,7 @@ var par = document.getElementById("par");                          //var for Let
 //audio Files
 var audioViolin = new Audio('assets/audio/violin.mp3');
 var audioCello = new Audio('assets/audio/cello.mp3');
-var audioTrumpet = new Audio('assets/audio/Trumpet.mp3');
+var audioTrumpet = new Audio('assets/audio/trumpet.mp3');
 var audioGuitar = new Audio('assets/audio/guitar.mp3');
 var audioViola = new Audio('assets/audio/viola.mp3');
 var audioPiano = new Audio('assets/audio/piano.mp3');
