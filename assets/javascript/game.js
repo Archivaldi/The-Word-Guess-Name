@@ -14,7 +14,8 @@ function takeWord() {
     var guess = 12;
     document.querySelector(".guess").innerText = guess;
 
-    if (guessWord === "violin") {                                      //if word "violin" is chousen
+    if (guessWord === "violin") {   
+        var audioWin = new Audio('assets/audio/violin.mp3');                                   //if word "violin" is chousen
 
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
@@ -30,6 +31,7 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioWin.play();
             }
         }
 
@@ -71,6 +73,8 @@ function takeWord() {
         }
     } else if (guessWord === "cello") {
 
+        var audioWin = new Audio('assets/audio/cello.mp3');
+
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -85,6 +89,7 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioWin.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
