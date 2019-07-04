@@ -253,7 +253,7 @@ function takeWord() {
                 document.querySelector(".wins").innerText = points;
                 takeWord();
                 stopAudio();
-                audioTrumpet.play();
+                audiotrumpet.play();
 
                 removeImgFromShow();
                 document.getElementById("trumpet").classList.add("show");
