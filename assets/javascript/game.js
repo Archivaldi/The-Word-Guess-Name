@@ -1,4 +1,4 @@
-var options = ["violin", "cello", "alto", "trumpet", "guitar", "piano", "saxophone", "clarinet", "flute"];
+var options = ["violin", "cello", "viola", "trumpet", "guitar", "piano", "saxophone", "clarinet", "flute"];
 var guess = 12;
 var points = 0; //wins
 var word = document.getElementById("word");
@@ -130,7 +130,8 @@ function takeWord() {
         }
 
 
-    } else if (guessWord === "alto") {
+    } else if (guessWord === "viola") {
+        var audioWin = new Audio('assets/audio/viola.mp3');
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -140,11 +141,12 @@ function takeWord() {
         word.textContent = wordToDisplay.join(" ");
 
         function win() {                                                 //function for winning
-            if (word.textContent == "a l t o") {
+            if (word.textContent == "v i o l a") {
                 console.log("you win!");
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioWin.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
