@@ -17,28 +17,28 @@ var audioFlute = new Audio('assets/audio/flute.mp3');
 var audioLose = new Audio('assets/audio/lose.mp3');
 
 function removeImgFromShow() {
-                document.getElementById("start").classList.remove("show");
-                document.getElementById("cello").classList.remove("show");
-                document.getElementById("viola").classList.remove("show");
-                document.getElementById("clarinet").classList.remove("show");
-                document.getElementById("flute").classList.remove("show");
-                document.getElementById("guitar").classList.remove("show");
-                document.getElementById("saxophone").classList.remove("show");
-                document.getElementById("trumpet").classList.remove("show");
-                document.getElementById("piano").classList.remove("show");
-                document.getElementById("violin").classList.remove("show");
+    document.getElementById("start").classList.remove("show");
+    document.getElementById("cello").classList.remove("show");
+    document.getElementById("viola").classList.remove("show");
+    document.getElementById("clarinet").classList.remove("show");
+    document.getElementById("flute").classList.remove("show");
+    document.getElementById("guitar").classList.remove("show");
+    document.getElementById("saxophone").classList.remove("show");
+    document.getElementById("trumpet").classList.remove("show");
+    document.getElementById("piano").classList.remove("show");
+    document.getElementById("violin").classList.remove("show");
 }
 
 function stopAudio() {
     audioTrumpet.pause();
-                audioSax.pause();
-                audioViola.pause();
-                audioGuitar.pause();
-                audioCello.pause();
-                audioPiano.pause();
-                audioClarinet.pause();
-                audioFlute.pause();
-                audioViolin.pause();
+    audioSax.pause();
+    audioViola.pause();
+    audioGuitar.pause();
+    audioCello.pause();
+    audioPiano.pause();
+    audioClarinet.pause();
+    audioFlute.pause();
+    audioViolin.pause();
 }
 
 
@@ -253,7 +253,7 @@ function takeWord() {
                 document.querySelector(".wins").innerText = points;
                 takeWord();
                 stopAudio();
-                audiotrumpet.play();
+                audioTrumpet.play();
 
                 removeImgFromShow();
                 document.getElementById("trumpet").classList.add("show");
