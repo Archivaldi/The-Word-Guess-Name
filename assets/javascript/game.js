@@ -293,7 +293,55 @@ function takeWord() {
                 } 
             }
             
-         } 
+         } else if (guessWord === "saxophone") {
+            var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
+                                                                            // change every character, bua we can change every separate string 
+            document.onkeypress = keyPressed;
+
+            var wordToDisplay = Array(guessWord.length).fill("_");           //in start of game we want't to display guessWord like "_ _ _ _ _ _"
+
+            word.textContent = wordToDisplay.join(" ");
+
+            function win() {                                                 //function for winning
+                if (word.textContent == "s a x o p h o n e") {
+                            console.log("you win!");
+                            points = points + 1;
+                            document.querySelector(".wins").innerText = points;
+                            takeWord();
+                        } 
+                    }
+            
+
+
+            function keyPressed() {                                          //function for game 
+
+                console.log(wordToGuess)
+                if (word.textContent.includes(event.key)){                   //put restrictions for doubled correct letters
+                    word.textContent = word.textContent;
+                    console.log("you typed this letter");
+                } else if (event.key == "o") {                               // word "violin" has two "i", so, we want to chahge both
+                    wordToDisplay[3] = event.key;
+                    wordToDisplay[6] = event.key;
+                    word.textContent = wordToDisplay.join(" ");
+                    win();
+                } else if (par.textContent.includes(event.key)) {            //put restrictions for doubled incorrect letters 
+                    par.textContent = par.textContent;
+                    console.log("guessed letter")
+                } else if (!(wordToGuess.includes(event.key))) {             //if you tiped incorrect letter, points goes down
+                    guess = guess - 1;
+                    document.querySelector(".guess").innerText = guess;
+                    par.innerText = par.textContent + (event.key) + ", ";
+                    console.log("-1 point");
+                    lose();
+                }  else { 
+                    wordToDisplay[wordToGuess.indexOf(event.key)] = event.key;
+                    word.textContent = wordToDisplay.join(" ");
+                    console.log(event.key);
+                    win();
+                } 
+            }
+            
+         }  
 
 
 }
