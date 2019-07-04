@@ -8,11 +8,13 @@ var par = document.getElementById("par");                          //var for Let
 var audioViolin =  new Audio('assets/audio/violin.mp3'); 
 var audioCello =  new Audio('assets/audio/cello.mp3'); 
 var audioTrumpet =  new Audio('assets/audio/Trumpet.mp3'); 
-var audioCello =  new Audio('assets/audio/viola.mp3');
 var audioGuitar =  new Audio('assets/audio/guitar.mp3'); 
 var audioViola =  new Audio('assets/audio/viola.mp3'); 
 var audioPiano =  new Audio('assets/audio/piano.mp3'); 
 var audioSax =  new Audio('assets/audio/saxophone.mp3'); 
+var audioClarinet =  new Audio('assets/audio/clarinet.mp3'); 
+var audioFlute =  new Audio('assets/audio/flute.mp3'); 
+var audioLose =  new Audio('assets/audio/lose.mp3'); 
  
 
 
@@ -48,14 +50,17 @@ function takeWord() {
                 audioGuitar.pause();
                 audioCello.pause();
                 audioPiano.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioViolin.play();
             }
         }
 
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
-                alert("you lose!");
+                alert("You lose!");
                 document.location.reload();
+                
             }
         }
 
@@ -110,11 +115,14 @@ function takeWord() {
                 audioGuitar.pause();
                 audioViolin.pause();
                 audioPiano.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioCello.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -172,11 +180,14 @@ function takeWord() {
                 audioCello.pause();
                 audioPiano.pause();
                 audioSax.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioViola.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -229,11 +240,14 @@ function takeWord() {
                 audioViola.pause();
                 audioPiano.pause();
                 audioSax.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioTrumpet.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -270,7 +284,6 @@ function takeWord() {
         }
 
     } else if (guessWord === "guitar") {
-        var audioWin = new Audio('assets/audio/violin.mp3');
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
         document.onkeypress = keyPressed;
@@ -291,11 +304,14 @@ function takeWord() {
                 audioTrumpet.pause();
                 audioPiano.pause();
                 audioSax.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioGuitar.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -347,11 +363,14 @@ function takeWord() {
                 audioTrumpet.pause();
                 audioGuitar.pause();
                 audioSax.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioPiano.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -403,11 +422,14 @@ function takeWord() {
                 audioTrumpet.pause();
                 audioGuitar.pause();
                 audioPiano.pause();
+                audioClarinet.pause();
+                audioFlute.pause();
                 audioSax.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -458,10 +480,20 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.pause();
+                audioGuitar.pause();
+                audioPiano.pause();
+                audioSax.pause();
+                audioFlute.pause();
+                audioClarinet.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
@@ -507,10 +539,20 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.pause();
+                audioGuitar.pause();
+                audioPiano.pause();
+                audioSax.pause();
+                audioClarinet.pause();
+                audioFlute.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
             if (guess == 0) {
+                audioLose.play();
                 alert("you lose!");
                 document.location.reload();
             }
