@@ -182,6 +182,7 @@ function takeWord() {
         }
 
     } else if (guessWord === "trumpet") {
+        var audioWin = new Audio('assets/audio/trumpet.mp3');
 
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
@@ -197,6 +198,7 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioWin.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
