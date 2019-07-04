@@ -8,18 +8,19 @@ var varIndex = Math.floor(Math.random() * options.length);         //random word
 var guessWord = options[varIndex];                                 //Computer's random chosen word from "options" array
 console.log(guessWord);
 
+var par = document.getElementById("par");                            //var for Letters Already Guessed paragraph
+
 
 if (guessWord === "violin") {                                        //if word "violin" is chousen
 
     var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
-    // change every character, bua we can change every separate string 
+                                                                     // change every character, bua we can change every separate string 
+    document.onkeypress = keyPressed;
 
     var wordToDisplay = Array(guessWord.length).fill("_");           //in start of game we want't to display guessWord like "_ _ _ _ _ _"
 
     word.textContent = wordToDisplay.join(" ");                      //then we take our split word back to the whole word
 
-    var par = document.getElementById("par");                        //var for Letters Already Guessed paragraph
-    document.onkeypress = keyPressed;
 
     function keyPressed() {                                          //function for game 
 
@@ -44,12 +45,19 @@ if (guessWord === "violin") {                                        //if word "
             document.querySelector(".guess").innerText = guess;
             par.innerText = par.textContent + (event.key) + ", ";
             console.log("-1 point");
-        } else {
+        }  else { 
             wordToDisplay[wordToGuess.indexOf(event.key)] = event.key;
             word.textContent = wordToDisplay.join(" ");
             console.log(event.key);
-        }
+        } 
 
+    }
+        function win() {
+        if (wordToDisplay == wordToGuess) {
+            points = points + 1;
+            document.querySelector(".wins").innerText = points;
+            console.log("you win!")
+        }
     }
 }
 
