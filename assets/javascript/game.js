@@ -1,4 +1,4 @@
-var options = ["violin", "cello", "viola", "trumpet", "guitar"]//, "piano", "saxophone", "clarinet", "flute"];
+var options = ["violin", "cello", "viola", "trumpet", "guitar", "piano", "saxophone", "clarinet", "flute"];
 var guess = 12;
 var points = 0; //wins
 var word = document.getElementById("word");
@@ -11,6 +11,8 @@ var audioTrumpet =  new Audio('assets/audio/Trumpet.mp3');
 var audioCello =  new Audio('assets/audio/viola.mp3');
 var audioGuitar =  new Audio('assets/audio/guitar.mp3'); 
 var audioViola =  new Audio('assets/audio/viola.mp3'); 
+var audioPiano =  new Audio('assets/audio/piano.mp3'); 
+var audioSax =  new Audio('assets/audio/saxophone.mp3'); 
  
 
 
@@ -41,9 +43,11 @@ function takeWord() {
                 document.querySelector(".wins").innerText = points;
                 takeWord();
                 audioTrumpet.pause();
+                audioSax.pause();
                 audioViola.pause();
                 audioGuitar.pause();
                 audioCello.pause();
+                audioPiano.pause();
                 audioViolin.play();
             }
         }
@@ -101,9 +105,11 @@ function takeWord() {
                 document.querySelector(".wins").innerText = points;
                 takeWord();
                 audioTrumpet.pause();
+                audioSax.pause();
                 audioViola.pause();
                 audioGuitar.pause();
                 audioViolin.pause();
+                audioPiano.pause();
                 audioCello.play();
             }
         }
@@ -164,6 +170,8 @@ function takeWord() {
                 audioGuitar.pause();
                 audioViolin.pause();
                 audioCello.pause();
+                audioPiano.pause();
+                audioSax.pause();
                 audioViola.play();
             }
         }
@@ -219,6 +227,8 @@ function takeWord() {
                 audioViolin.pause();
                 audioCello.pause();
                 audioViola.pause();
+                audioPiano.pause();
+                audioSax.pause();
                 audioTrumpet.play();
             }
         }
@@ -279,6 +289,8 @@ function takeWord() {
                 audioCello.pause();
                 audioViola.pause();
                 audioTrumpet.pause();
+                audioPiano.pause();
+                audioSax.pause();
                 audioGuitar.play();
             }
         }
@@ -329,6 +341,13 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.pause();
+                audioGuitar.pause();
+                audioSax.pause();
+                audioPiano.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -378,6 +397,13 @@ function takeWord() {
                 points = points + 1;
                 document.querySelector(".wins").innerText = points;
                 takeWord();
+                audioViolin.pause();
+                audioCello.pause();
+                audioViola.pause();
+                audioTrumpet.pause();
+                audioGuitar.pause();
+                audioPiano.pause();
+                audioSax.play();
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
