@@ -16,6 +16,18 @@ var audioClarinet = new Audio('assets/audio/clarinet.mp3');
 var audioFlute = new Audio('assets/audio/flute.mp3');
 var audioLose = new Audio('assets/audio/lose.mp3');
 
+function removeTextWord() {
+    document.getElementById("celloText").classList.remove("show");
+    document.getElementById("violaText").classList.remove("show");
+    document.getElementById("clarinetText").classList.remove("show");
+    document.getElementById("fluteText").classList.remove("show");
+    document.getElementById("guitarText").classList.remove("show");
+    document.getElementById("saxophoneText").classList.remove("show");
+    document.getElementById("trumpetText").classList.remove("show");
+    document.getElementById("pianoText").classList.remove("show");
+    document.getElementById("violinText").classList.remove("show");
+}
+
 function removeImgFromShow() {
     document.getElementById("start").classList.remove("show");
     document.getElementById("cello").classList.remove("show");
@@ -53,7 +65,15 @@ function takeWord() {
     var guess = 12;
     document.querySelector(".guess").innerText = guess;
 
-    if (guessWord === "violin") {                                      //if word "violin" is chousen
+    if (points == 10) {
+        var winner = confirm("Congratulations! You won! Do you want to play again?")
+        if (winner == true) {
+            document.location.reload();
+        } else {
+            var bye = document.getElementById("bye");
+            bye.classList.add("show");
+        }
+    } else if (guessWord === "violin") {                                      //if word "violin" is chousen
 
         var wordToGuess = guessWord.split("");                           //we want to split our guessWord on elements because we can't 
         // change every character, bua we can change every separate string 
@@ -77,6 +97,9 @@ function takeWord() {
                 //hide all images and show that we need
                 removeImgFromShow();
                 document.getElementById("violin").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("violinText").classList.add("show");
             }
         }
 
@@ -139,6 +162,9 @@ function takeWord() {
                 //hide all images and show that we need
                 removeImgFromShow();
                 document.getElementById("cello").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("celloText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -201,6 +227,9 @@ function takeWord() {
                 //hide all images and show that we need
                 removeImgFromShow();
                 document.getElementById("viola").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("violaText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -257,6 +286,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("trumpet").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("trumpetText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -317,6 +349,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("guitar").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("guitarText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -372,6 +407,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("piano").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("pianoText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -428,6 +466,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("saxophone").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("saxophoneText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -488,6 +529,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("clarinet").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("clarinetText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
@@ -543,6 +587,9 @@ function takeWord() {
 
                 removeImgFromShow();
                 document.getElementById("flute").classList.add("show");
+
+                removeTextWord();
+                document.getElementById("fluteText").classList.add("show");
             }
         }
         function lose() {                                                  //if player got 0 tries, then refresh the page
