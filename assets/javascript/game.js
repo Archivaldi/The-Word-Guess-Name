@@ -352,7 +352,7 @@ function takeWord() {
         word.textContent = wordToDisplay.join(" ");
 
         function win() {
-        if (word.textContent == "t r u m p e t") {
+        if (word.textContent == "g u i t a r") {
             console.log("you win!");
             points = points + 1;
             document.querySelector(".wins").innerText = points;
