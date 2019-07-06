@@ -352,6 +352,7 @@ function takeWord() {
         word.textContent = wordToDisplay.join(" ");
 
         function win() {
+        if (word.textContent == "t r u m p e t") {
             console.log("you win!");
             points = points + 1;
             document.querySelector(".wins").innerText = points;
@@ -365,6 +366,7 @@ function takeWord() {
             removeTextWord();
             document.getElementById("guitarText").classList.add("show");
         }
+    }
 
     function lose() {
         audioLose.play();
