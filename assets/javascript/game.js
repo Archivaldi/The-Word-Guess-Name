@@ -14,6 +14,19 @@ var word = document.getElementById("word");
 //var for Letters Already Guessed paragraph
 var par = document.getElementById("par");
 
+var bye = document.getElementById("bye");
+
+//we want to hide everything if player dosn't want to play again
+function endOfGame() {
+    document.querySelector("h1").classList.add("hide");
+    document.querySelector("h2").classList.add("hide");
+    document.querySelector("h3").classList.add("hide");
+    document.querySelector("h1").classList.add("hide");
+    document.querySelector("h1").classList.add("hide");
+    document.querySelector("p").classList.add("hide");
+    bye.classList.add("show");
+}
+
 //audio Files
 var audioViolin = new Audio('assets/audio/violin.mp3');
 var audioCello = new Audio('assets/audio/cello.mp3');
